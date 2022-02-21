@@ -1,6 +1,7 @@
 import fetch from 'cross-fetch';
 
 import listRef, { ListRef } from './refs/listRef.js';
+import workspaceRef, { WorkspaceRef } from './refs/workspaceRef.js';
 
 export interface ClickUpClientContext {
   fetch: <TData = any>(endpoint: string, init?: Omit<RequestInit, 'url'>) => Promise<TData>;
@@ -8,6 +9,7 @@ export interface ClickUpClientContext {
 
 export interface ClickUpClient {
   list: (listId: string) => ListRef;
+  workspace: (workspaceId: string) => WorkspaceRef;
 }
 
 /**
@@ -28,6 +30,7 @@ const clickUpClient = (apiToken: string, context?: ClickUpClientContext) => {
 
   return {
     list: (listId: string) => listRef(context!, listId),
+    workspace: (workspaceId: string) => workspaceRef(context!, workspaceId),
   };
 };
 

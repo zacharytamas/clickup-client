@@ -1,5 +1,16 @@
 export interface Task {
   id: string;
+  description?: string;
+}
+
+interface CustomFieldValue {
+  name: string;
+  value: any;
+}
+
+export interface TaskFilterParameters {
+  include_closed?: boolean;
+  tags?: string[];
 }
 
 /**
@@ -7,4 +18,6 @@ export interface Task {
  */
 export interface TaskCreateParams {
   name?: string;
+  description?: string;
+  custom_fields?: CustomFieldValue[];
 }

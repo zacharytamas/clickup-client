@@ -1,6 +1,6 @@
 import clickUpClient from './client.js';
 
-export type { TaskCreateParams } from './types/Task.js';
+export * from './types/index.js';
 
 export type { ClickUpClient } from './client.js';
 
