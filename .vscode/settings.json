@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["clickup"]
+  "cSpell.words": ["clickup"],
+
+  // For proper ESM imports
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js"
 }
