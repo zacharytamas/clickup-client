@@ -6,5 +6,8 @@
   "repository": "https://github.com/zacharytamas/clickup-client",
   "author": "Zachary Jones <zachary@jones.cx>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
 }
