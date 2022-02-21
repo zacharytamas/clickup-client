@@ -1,0 +1,10 @@
+{
+  "name": "clickup-client",
+  "version": "0.1.0",
+  "description": "A TypeScript client for interacting with the ClickUp API.",
+  "main": "index.js",
+  "repository": "https://github.com/zacharytamas/clickup-client",
+  "author": "Zachary Jones <zachary@jones.cx>",
+  "license": "MIT",
+  "private": false
+}
