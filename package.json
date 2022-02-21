@@ -1,6 +1,7 @@
 {
   "name": "clickup-client",
-  "version": "0.1.0",
+  "version": "0.0.0",
+  "type": "module",
   "description": "A TypeScript client for interacting with the ClickUp API.",
   "main": "index.js",
   "repository": "https://github.com/zacharytamas/clickup-client",
