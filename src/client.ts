@@ -15,8 +15,8 @@ export interface ClickUpClient {
 /**
  * A client for interacting with the ClickUp API.
  */
-const clickUpClient = (apiToken: string, context?: ClickUpClientContext) => {
-  context = context ?? {
+const clickUpClient = (apiToken: string) => {
+  const context: ClickUpClientContext = {
     fetch: async (endpoint, init = {}) => {
       const resp = await fetch(`https://api.clickup.com/api${endpoint}`, {
         method: 'get',
@@ -29,8 +29,8 @@ const clickUpClient = (apiToken: string, context?: ClickUpClientContext) => {
   };
 
   return {
-    list: (listId: string) => listRef(context!, listId),
-    workspace: (workspaceId: string) => workspaceRef(context!, workspaceId),
+    list: (listId: string) => listRef(context, listId),
+    workspace: (workspaceId: string) => workspaceRef(context, workspaceId),
   };
 };
 

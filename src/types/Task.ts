@@ -4,7 +4,7 @@ export interface Task {
 }
 
 interface CustomFieldValue {
-  name: string;
+  id: string;
   value: any;
 }
 
