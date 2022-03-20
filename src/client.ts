@@ -1,6 +1,7 @@
 import fetch from 'cross-fetch';
 
 import listRef, { ListRef } from './refs/listRef.js';
+import taskRef, { TaskRef } from './refs/taskRef.js';
 import workspaceRef, { WorkspaceRef } from './refs/workspaceRef.js';
 
 export interface ClickUpClientContext {
@@ -10,6 +11,7 @@ export interface ClickUpClientContext {
 export interface ClickUpClient {
   list: (listId: string) => ListRef;
   workspace: (workspaceId: string) => WorkspaceRef;
+  task: (taskId: string) => TaskRef;
 }
 
 /**
@@ -31,6 +33,7 @@ const clickUpClient = (apiToken: string) => {
   return {
     list: (listId: string) => listRef(context, listId),
     workspace: (workspaceId: string) => workspaceRef(context, workspaceId),
+    task: (taskId: string) => taskRef(context, taskId),
   };
 };
 

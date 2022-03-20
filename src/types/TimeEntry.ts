@@ -1,3 +1,5 @@
+import type { Task } from './Task.js';
+
 interface User {
   id: string;
   username: string;
@@ -36,4 +38,6 @@ export interface TimeEntry {
    * this value will be negative.
    */
   duration: string;
+
+  task?: Task;
 }

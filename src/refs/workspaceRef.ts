@@ -29,15 +29,14 @@ const workspaceRef = (context: ClickUpClientContext, workspaceId: string): Works
 
       Object.entries(taskFilters).forEach(([key, value]) => {
         if (Array.isArray(value)) {
-          value.forEach((v) => queryParams.append(`${key}`, v));
+          value.forEach((v) => queryParams.append(`${key}[]`, v));
         } else {
           queryParams.set(key, value);
         }
       });
 
-      const { tasks } = await context.fetch<{ tasks: Task[] }>(
-        `/v2/team/${workspaceId}/task?${queryParams.toString()}`
-      );
+      const url = `/v2/team/${workspaceId}/task?${queryParams.toString()}`;
+      const { tasks } = await context.fetch<{ tasks: Task[] }>(url);
 
       return tasks;
     },
