@@ -4,13 +4,25 @@ export interface Tag {
   tag_fg: string;
   creator: number; // I guess the ID of the User who created this tag?
 }
+
+export interface Dependency {
+  task_id: string;
+  depends_on: string;
+  type: 1; // Likely others but I don't know at the moment what they are.
+  date_created: string;
+  userid: string;
+}
+
 export interface Task {
   id: string;
   description?: string;
   start_date: string | null;
+  date_closed: string | null;
   name: string | null;
   parent: string | null;
   tags: Tag[];
+  dependencies: Dependency[] | null;
+  url: string;
 }
 
 interface CustomFieldValue {
