@@ -18,6 +18,7 @@ export interface Task {
   description?: string;
   start_date: string | null;
   date_closed: string | null;
+  date_updated: string | null;
   name: string | null;
   parent: string | null;
   tags: Tag[];
@@ -39,6 +40,8 @@ export interface TaskFilterParameters {
   // ID of parent task. I haven't seen this documented anywhere but it seems to work.
   parent?: string;
   page?: number;
+  /** Filter date updated greater than Unix time in milliseconds */
+  date_updated_gt?: number;
 }
 
 /**
