@@ -1,10 +1,11 @@
 import { ClickUpClientContext } from '../client.js';
-import { Task } from '../types/index.js';
+import { Comment, Task } from '../types/index.js';
 import { EntityRef } from './types.js';
 
 export interface TaskRef extends EntityRef<Task> {
   addTag(tagName: string): Promise<any>;
   removeTag(tagName: string): Promise<any>;
+  getComments(): Promise<Comment[]>;
 }
 
 const taskRef = (context: ClickUpClientContext, taskId: string): TaskRef => {
@@ -14,6 +15,7 @@ const taskRef = (context: ClickUpClientContext, taskId: string): TaskRef => {
       context.fetch(`/v2/task/${taskId}/tag/${tagName}/`, { method: 'post' }),
     removeTag: (tagName: string) =>
       context.fetch(`/v2/task/${taskId}/tag/${tagName}`, { method: 'delete' }),
+    getComments: () => context.fetch(`/v2/task/${taskId}/comment`),
   };
 };
 

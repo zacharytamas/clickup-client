@@ -24,6 +24,7 @@ export interface Task {
   tags: Tag[];
   dependencies: Dependency[] | null;
   url: string;
+  space: { id: string };
 }
 
 interface CustomFieldValue {
