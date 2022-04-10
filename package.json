@@ -1,5 +1,5 @@
 {
-  "name": "clickup-client",
+  "name": "@clicked/client",
   "version": "0.0.0",
   "type": "module",
   "description": "A TypeScript client for interacting with the ClickUp API.",

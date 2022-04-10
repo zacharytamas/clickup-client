@@ -6,7 +6,7 @@ exports ESM modules.
 ## Example Usage
 
 ```typescript
-import clickUpClient from 'clickup-client';
+import clickUpClient from '@clicked/client';
 
 (async () => {
   const client = clickUpClient('<my_token>');
